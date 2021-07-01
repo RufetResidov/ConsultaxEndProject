@@ -1,0 +1,40 @@
+﻿@model ConsultaxMVC.Models.AboutStatisticCount
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>AboutStatisticCount</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="countNum" class="control-label"></label>
+                <input asp-for="countNum" class="form-control" />
+                <span asp-validation-for="countNum" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TitleLeft" class="control-label"></label>
+                <input asp-for="TitleLeft" class="form-control" />
+                <span asp-validation-for="TitleLeft" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TitleRight" class="control-label"></label>
+                <input asp-for="TitleRight" class="form-control" />
+                <span asp-validation-for="TitleRight" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

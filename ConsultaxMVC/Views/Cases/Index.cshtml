@@ -1,0 +1,73 @@
+﻿@model HomeVm
+<div class="page-header">
+			    <div class="container">
+			        <div class="breadc-box no-line">
+			            <div class="row">
+			                <div class="col-md-6">
+			                    <h1 class="page-title">Cases Studies 2 Columns</h1>
+			                </div>
+			                <div class="col-md-6 mobile-left text-right">
+			                    <ul id="breadcrumbs" class="breadcrumbs none-style">
+			                        <li><a href="index.html">Home</a></li>
+			                        <li class="active">Cases Studies 2 Columns</li>
+			                    </ul>
+			                </div>
+			            </div>
+			        </div>
+			    </div>
+			</div>
+
+			<section class="section-padd padd-bot-90">
+				<div class="container">
+					<div class="section-head ">
+					    <h6><span>featured project</span></h6>
+					    <h2 class="section-title">We are the leaders</h2>
+					</div>
+					<div class="empty_space_12"></div>
+                    <div class="project-slider projects" data-show="1" data-auto="true" data-arrow="true" data-dot="">
+
+                        @foreach (var fp in Model.FeaturedProjects)
+                         {
+                            <div>
+                                <div class="project-item">
+                                    <img class="radius" src="@fp.Photo" alt="">
+                                    <div class="inner">
+                                        <p class="contract">Contract Project:@fp.ContractDate.ToString("dd MM yyyy")</p>
+                                        <h4><a href="project-detail.html">@fp.WorkArea </a></h4>
+                                        <a class="pagelink" href="/Cases/Detail">View details</a>
+                                    </div>
+                                </div>
+                            </div>
+                         }
+                    </div>
+					<div class="empty_space_70"></div>
+					<div class="project-filter" data-column="2">
+					    <div id="filters" class="cat-filter">
+					        <a href="#" data-filter="*" class="filter-item all-cat selected">All</a>
+					        <a href="#" data-filter=".audit-assurance" class="filter-item">Audit &amp; Assurance</a>
+					        <a href="#" data-filter=".restructuring" class="filter-item">Restructuring</a>
+					        <a href="#" data-filter=".strategic-planning" class="filter-item">Strategic Planning</a>
+					        <a href="#" data-filter=".trades-stocks" class="filter-item">Trades &amp; Stocks</a>
+					    </div>
+                        <div id="projects" class="project-grid projects row ">
+                            @foreach (var pp in Model.PictureProjects)
+                            {
+                                <div class="project-item trades-stocks col-md-6 col-sm-6">
+                                    <div class="inner">
+                                        <a href="/Cases/Detail">
+                                            <img src="@pp.Photo" alt="">
+                                        </a>
+                                        <div class="p-info">
+                                            <h6><span>@pp.Header</span></h6>
+                                            <h4>
+                                                <a href="/Cases/Detail">@pp.Title</a>
+                                            </h4>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            }
+                        </div>
+					</div>
+				</div>
+			</section>

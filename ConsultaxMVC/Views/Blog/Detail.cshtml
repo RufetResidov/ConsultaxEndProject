@@ -1,0 +1,59 @@
+﻿
+@{
+    Blog blog = ViewData["blogDetail"] as Blog;
+}
+<div style="margin:4rem"  class="row">
+    <div  class="col-lg-7">
+        <article class="post-box post type-post hentry">
+            <div class="entry-media">
+                <a href="post.html">
+                    <img src="@blog.PhotoUrl" alt="">
+                </a>
+            </div>
+            <div class="inner-post">
+                <header class="entry-header">
+
+                    <div class="entry-meta">
+                        <span class="posted-on">
+                            <time class="entry-date published">August 14, 2018</time>
+                        </span>
+                        <span class="posted-in">
+                            <a href="#" rel="category tag">@blog.Category</a>
+                        </span>
+                    </div>
+                    <!-- .entry-meta -->
+                    <h4 class="entry-title"><a href="post.html" rel="bookmark">@blog.Header</a></h4>
+                </header>
+                <!-- .entry-header -->
+
+                <div class="entry-summary">
+                    <p>@blog.Title</p>
+                </div>
+                <!-- .entry-content -->
+
+                <footer class="entry-footer">
+                    <a class="post-link" href="post.html">Read more</a>
+                </footer>
+                <!-- .entry-footer -->
+            </div>
+        </article>
+    </div>
+    <div class="col-lg-4">
+        @foreach (var blogDetail in ViewData["blogs"] as List<Blog>)
+        {
+            <a href="/Blog/Detail/@blogDetail.ID">
+                <div class="row align-items-center">
+                    <div class="col-lg-4">
+                        <img class="img-fluid" src="@blogDetail.PhotoUrl" />
+                    </div>
+                    <div style="margin-bottom:20px" class="col-lg-6">
+                        <h6 style="margin:0px">@blogDetail.Header</h6>
+                        <span>@blogDetail.PublishDate.ToString("dd MMM yyyy")</span>
+                    </div>
+                </div>
+            </a>
+        }
+
+    </div>
+</div>
+
